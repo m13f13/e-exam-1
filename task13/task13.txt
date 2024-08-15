@@ -1,0 +1,11 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl expose deployment sec-deploy --port 80 --target-port 80 -n exam-azizbek
+service/sec-deploy exposed
+
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get svc
+NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+flaskapp-cluster      ClusterIP   10.233.26.60   <none>        80/TCP         57m
+flaskapp-nvrbckdown   NodePort    10.233.32.85   <none>        80:30694/TCP   65m
+frontend-app          NodePort    10.233.1.38    <none>        80:31127/TCP   36m
+sec-deploy            ClusterIP   10.233.23.48   <none>        80/TCP         64s
+

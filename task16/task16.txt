@@ -1,0 +1,7 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get endpoints -o wide
+NAME                  ENDPOINTS                                            AGE
+flaskapp-cluster      10.233.71.57:5000                                    68m
+flaskapp-nvrbckdown   10.233.71.57:5000                                    76m
+frontend-app          10.233.71.6:80                                       47m
+sec-deploy            10.233.102.145:80,10.233.75.33:80,10.233.97.182:80   12m
+

@@ -1,0 +1,12 @@
+alonso@alonso-vm:~/exam$ kubectl run nginx1 --image nginx -n exam-azizbek -l project=practice -l author=Azizbek
+pod/nginx1 created
+alonso@alonso-vm:~/exam$ kubectl run nginx2 --image nginx -n exam-azizbek -l project=practice -l author=Azizbek
+pod/nginx2 created
+alonso@alonso-vm:~/exam$ kubectl  get pods
+No resources found in a-taniqulov namespace.
+alonso@alonso-vm:~/exam$ kubectl  get pods -n exam-azizbek
+NAME     READY   STATUS    RESTARTS   AGE
+nginx1   1/1     Running   0          26s
+nginx2   1/1     Running   0          12s
+alonso@alonso-vm:~/exam$ 
+

@@ -1,0 +1,41 @@
+alonso@alonso-vm:~/exam/repo-2-main$ docker build -t m13f13/u-exam-1:v1 .
+[+] Building 11.8s (11/11) FINISHED                                                                                                                           docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                    0.0s
+ => => transferring dockerfile: 155B                                                                                                                                    0.0s
+ => [internal] load metadata for docker.io/library/node:18-alpine                                                                                                       2.9s
+ => [auth] library/node:pull token for registry-1.docker.io                                                                                                             0.0s
+ => [internal] load .dockerignore                                                                                                                                       0.0s
+ => => transferring context: 2B                                                                                                                                         0.0s
+ => [1/5] FROM docker.io/library/node:18-alpine@sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729                                                 3.7s
+ => => resolve docker.io/library/node:18-alpine@sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729                                                 0.0s
+ => => sha256:b322b7878816ed74992920dcc59c4a4e30eb3d027b9488afac30b4d8d17bc692 1.72kB / 1.72kB                                                                          0.0s
+ => => sha256:e64c650c0cf3f9e9d60f662499a88e4f49355cad017f05936dab04e3bc564706 6.36kB / 6.36kB                                                                          0.0s
+ => => sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69 39.84MB / 39.84MB                                                                        2.2s
+ => => sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464 1.38MB / 1.38MB                                                                          0.6s
+ => => sha256:62c7e5ec2b01a374e0ad0f2299c63d7940a5bdb466c580b243b9977dc12b8ecb 444B / 444B                                                                              0.7s
+ => => sha256:17514b20acef0e79691285e7a59f3ae561f7a1702a9adc72a515aef23f326729 7.67kB / 7.67kB                                                                          0.0s
+ => => extracting sha256:1475bb19bdb76a034cba9b274ea9e4298897d6e108dbc81268740d70639f2b69                                                                               1.3s
+ => => extracting sha256:bc6e437c6fa911e43ef82fe79ec3cf94625557d8426639ee7758448b8a4fb464                                                                               0.0s
+ => => extracting sha256:62c7e5ec2b01a374e0ad0f2299c63d7940a5bdb466c580b243b9977dc12b8ecb                                                                               0.0s
+ => [internal] load build context                                                                                                                                       0.0s
+ => => transferring context: 2.35kB                                                                                                                                     0.0s
+ => [2/5] WORKDIR /app                                                                                                                                                  0.5s
+ => [3/5] COPY package.json .                                                                                                                                           0.0s
+ => [4/5] RUN npm install                                                                                                                                               4.5s
+ => [5/5] COPY main.js .                                                                                                                                                0.0s 
+ => exporting to image                                                                                                                                                  0.1s 
+ => => exporting layers                                                                                                                                                 0.1s 
+ => => writing image sha256:281c4f30e685206e8cf99470a47e4859ab01691b1053b1caec8f899106f5a865                                                                            0.0s
+ => => naming to docker.io/m13f13/u-exam-1:v1                                                                                                                           0.0s
+alonso@alonso-vm:~/exam/repo-2-main$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+alonso@alonso-vm:~/exam/repo-2-main$ docker images
+REPOSITORY              TAG       IMAGE ID       CREATED          SIZE
+m13f13/u-exam-1         v1        281c4f30e685   27 seconds ago   135MB
+a-taniqulov-env-image   latest    9050661a94a8   2 weeks ago      136MB
+m13f13/sample           v1        9050661a94a8   2 weeks ago      136MB
+my-app                  v1        d605c29436f8   2 weeks ago      58.5MB
+2048-nginx-images       test      aec1dc2eebc4   3 weeks ago      44MB
+alonso@alonso-vm:~/exam/repo-2-main$ 
+
+

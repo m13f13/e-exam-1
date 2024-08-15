@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sec-deploy
+  namespace: exam-azizbek
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: sec-deploy
+  template:
+    metadata:
+      labels:
+        app: sec-deploy
+    spec:
+      containers:
+        - name: sec-deploy
+          image: m13f13/u-exam-1:v1
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
+          env:
+            - name: CPU
+              valueFrom:
+                resourceFieldRef:
+                  containerName: sec-deploy
+                  resource: requests.cpu
+            - name: MEMORY
+              valueFrom:
+                resourceFieldRef:
+                  containerName: sec-deploy
+                  resource: requests.memory

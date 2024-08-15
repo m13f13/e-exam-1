@@ -1,0 +1,10 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl create -f limit.yaml -n exam-azizbek
+limitrange/cpu-resource-constraint created
+
+
+
+
+
+
+NAME                      CREATED AT
+cpu-resource-constraint   2024-08-14T16:59:16Z

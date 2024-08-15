@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: flaskapp-nvrbckdown
+  name: flaskapp-nvrbckdown
+  namespace: exam-azizbek
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flaskapp-nvrbckdown
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: flaskapp-nvrbckdown
+    spec:
+      containers:
+      - image: nvrbckdown/flask-app:v1
+        name: flask-app
+        resources: {}
+status: {}

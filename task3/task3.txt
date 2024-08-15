@@ -1,0 +1,19 @@
+alonso@alonso-vm:~/exam$ kubectl get pods --all-namespaces -l project=practice
+NAMESPACE               NAME     READY   STATUS    RESTARTS   AGE
+exam-davron             nginx1   1/1     Running   0          42m
+exam-davron             nginx2   1/1     Running   0          42m
+exam-dilshod-xolmatov   ngin1    1/1     Running   0          13m
+exam-dilshod-xolmatov   ngin2    1/1     Running   0          13m
+exam-kodirovr           nginx1   1/1     Running   0          43m
+exam-kodirovr           nginx2   1/1     Running   0          43m
+exam-maxmudov           nginx1   1/1     Running   0          11m
+exam-maxmudov           nginx2   1/1     Running   0          10m
+exam-ravshan            nginx1   1/1     Running   0          18m
+exam-ravshan            nginx2   1/1     Running   0          18m
+exam-xotam              nginx1   1/1     Running   0          31m
+exam-xotam              nginx2   1/1     Running   0          31m
+exam-xurshid            nginx1   1/1     Running   0          10m
+exam-xurshid            nginx2   1/1     Running   0          10m
+alonso@alonso-vm:~/exam$ 
+
+

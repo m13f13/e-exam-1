@@ -1,0 +1,14 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl create deployment sec-deploy --image m13f13/u-exam-1:v1 --dry-run=client -o yaml > task12.yaml 
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl apply -f task12.yaml -n exam-azizbek
+deployment.apps/sec-deploy created
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+flaskapp-nvrbckdown-54c66bb989-x4mt7   1/1     Running   0          70m
+frontend-app-6fb9bb9dc8-tvvtv          1/1     Running   0          34m
+nginx1                                 1/1     Running   0          109m
+nginx2                                 1/1     Running   0          108m
+sec-deploy-778b9dddd7-v95lh            1/1     Running   0          18s
+
+

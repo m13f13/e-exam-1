@@ -1,0 +1,19 @@
+alonso@alonso-vm:~/exam/repo-2-main/task$ kubectl  get deployment
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+flaskapp-nvrbckdown   1/1     1            1           36m
+frontend-app          1/1     1            1           43s
+
+alonso@alonso-vm:~/exam/repo-2-main/task$ kubectl expose deployment frontend-app --type=NodePort --name=frontend-app --port 80 --target-port 80 -n exam-azizbek 
+service/frontend-app exposed
+
+alonso@alonso-vm:~/exam/repo-2-main/task$ kubectl  get svc
+NAME                  TYPE        CLUSTER-IP     EXTERNAL-IP   PORT(S)        AGE
+flaskapp-cluster      ClusterIP   10.233.26.60   <none>        80/TCP         21m
+flaskapp-nvrbckdown   NodePort    10.233.32.85   <none>        80:30694/TCP   28m
+frontend-app          NodePort    10.233.1.38    <none>        80:31127/TCP   4s
+
+alonso@alonso-vm:~/exam/repo-2-main/task$ curl 65.109.137.203:31127
+{"message":"Welcome to your Kubernetes Exam!"}alonso@alonso-vm:~/exam/repo-2-main/task$ 
+alonso@alonso-vm:~/exam/repo-2-main/task$ 
+
+

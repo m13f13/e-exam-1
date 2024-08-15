@@ -1,0 +1,78 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get cronjob
+NAME           SCHEDULE      TIMEZONE   SUSPEND   ACTIVE   LAST SCHEDULE   AGE
+ping-cronjob   */2 * * * *   <none>     False     1        3s              12s
+
+
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get jobs
+NAME                    STATUS     COMPLETIONS   DURATION   AGE
+ping-cronjob-28727646   Complete   1/1           6s         3m27s
+ping-cronjob-28727648   Complete   1/1           5s         87s
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl describe job ping-cronjob-28727646
+Name:             ping-cronjob-28727646
+Namespace:        exam-azizbek
+Selector:         batch.kubernetes.io/controller-uid=ab582595-fc12-47e9-9b4f-61f4e4bf18f5
+Labels:           batch.kubernetes.io/controller-uid=ab582595-fc12-47e9-9b4f-61f4e4bf18f5
+                  batch.kubernetes.io/job-name=ping-cronjob-28727646
+                  controller-uid=ab582595-fc12-47e9-9b4f-61f4e4bf18f5
+                  job-name=ping-cronjob-28727646
+Annotations:      batch.kubernetes.io/cronjob-scheduled-timestamp: 2024-08-14T18:06:00Z
+Controlled By:    CronJob/ping-cronjob
+Parallelism:      1
+Completions:      1
+Completion Mode:  NonIndexed
+Suspend:          false
+Backoff Limit:    6
+Start Time:       Wed, 14 Aug 2024 23:06:00 +0500
+Completed At:     Wed, 14 Aug 2024 23:06:06 +0500
+Duration:         6s
+Pods Statuses:    0 Active (0 Ready) / 1 Succeeded / 0 Failed
+Pod Template:
+  Labels:  batch.kubernetes.io/controller-uid=ab582595-fc12-47e9-9b4f-61f4e4bf18f5
+           batch.kubernetes.io/job-name=ping-cronjob-28727646
+           controller-uid=ab582595-fc12-47e9-9b4f-61f4e4bf18f5
+           job-name=ping-cronjob-28727646
+  Containers:
+   ping-container:
+    Image:      busybox
+    Port:       <none>
+    Host Port:  <none>
+    Command:
+      /bin/sh
+      -c
+      for i in {1..4}; do
+        echo "Pinging 8.8.8.8 (attempt $i)...";
+        ping -c 1 8.8.8.8;
+        sleep 1;
+      done
+      
+    Environment:   <none>
+    Mounts:        <none>
+  Volumes:         <none>
+  Node-Selectors:  <none>
+  Tolerations:     <none>
+Events:
+  Type    Reason            Age    From            Message
+  ----    ------            ----   ----            -------
+  Normal  SuccessfulCreate  3m58s  job-controller  Created pod: ping-cronjob-28727646-g58k7
+  Normal  Completed         3m52s  job-controller  Job completed
+alonso@alonso-vm:~/exam/repo-2-main$ 
+
+
+
+
+
+
+
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl logs ping-cronjob-28727646-g58k7 
+Pinging 8.8.8.8 (attempt {1..4})...
+PING 8.8.8.8 (8.8.8.8): 56 data bytes
+64 bytes from 8.8.8.8: seq=0 ttl=56 time=1.169 ms
+
+--- 8.8.8.8 ping statistics ---
+1 packets transmitted, 1 packets received, 0% packet loss
+round-trip min/avg/max = 1.169/1.169/1.169 ms
+alonso@alonso-vm:~/exam/repo-2-main$ 
+
+

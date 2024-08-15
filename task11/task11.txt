@@ -1,0 +1,6 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl create secret generic database -n exam-azizbek --from-literal DB_URI=postgres://admin:supersecret@10.10.10.1:5432/exam-db 
+secret/database created
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get secret -n exam-azizbek
+NAME       TYPE     DATA   AGE
+database   Opaque   1      21s

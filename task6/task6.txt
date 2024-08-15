@@ -1,0 +1,8 @@
+alonso@alonso-vm:~/exam$ kubectl exec -it nginx1 -n exam-azizbek -- bash 
+root@nginx1:/# 
+root@nginx1:/# 
+root@nginx1:/# curl flaskapp-nvrbckdown/check-ingress
+{"domain":"flaskapp-nvrbckdown","endpoint":"/check-ingress","full_path:":"flaskapp-nvrbckdown/check-ingress"}
+root@nginx1:/# 
+
+

@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ping-cronjob
+spec:
+  schedule: "*/2 * * * *"  # Every 2 minutes
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ping-container
+            image: busybox
+            command:
+            - /bin/sh
+            - -c
+            - |
+              for i in {1..4}; do
+                echo "Pinging 8.8.8.8 (attempt $i)...";
+                ping -c 1 8.8.8.8;
+                sleep 1;
+              done
+          restartPolicy: OnFailure
+

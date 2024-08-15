@@ -1,0 +1,9 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl create ingress sec-deploy-2 -n exam-azizbek --rule "atanikulov.nvrbckdown.uz/*=sec-deploy:80" --class nginx
+ingress.networking.k8s.io/sec-deploy-2 created
+
+
+alonso@alonso-vm:~/exam/repo-2-main$ curl atanikulov.nvrbckdown.uz/config
+{"log_level":"debug","grpc_port":"8080","environment":"dev","db_url":"postgres://admin:supersecret@10.10.10.1:5432/exam-db","pod_ip":"10.10.10.10"}alonso@alonso-vm:~/exam/repo-2-main$ curl atanikulov.nvrbckdown.uz/load-capability
+{"cpus":"1","memorys":"67108864"}alonso@alonso-vm:~/exam/repo-2-main$ 
+
+

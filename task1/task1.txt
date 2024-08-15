@@ -1,0 +1,19 @@
+kubectl create namespace exam-azizbek
+
+alonso@alonso-vm:~/exam/repo-1-main$ kubectl  get namespaces
+NAME                    STATUS   AGE
+a-yusupov               Active   3h29m
+default                 Active   12d
+exam-adxamov            Active   5m55s
+exam-azizbek            Active   57s
+exam-davron             Active   12m
+exam-dilshod-xolmatov   Active   11m
+exam-kodirovr           Active   17m
+f-nabiyev               Active   5h34m
+ingress-nginx           Active   12d
+kube-node-lease         Active   12d
+kube-public             Active   12d
+kube-system             Active   12d
+practice-xotam          Active   12m
+alonso@alonso-vm:~/exam/repo-1-main$ 
+

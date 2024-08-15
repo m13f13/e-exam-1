@@ -1,0 +1,25 @@
+alonso@alonso-vm:~/exam$ kubectl create deployment flaskapp-nvrbckdown -n exam-azizbek --image nvrbckdown/flask-app:v1 --dry-run=client -o yaml > task4.yaml
+
+alonso@alonso-vm:~/exam$ kubectl create -f task4.yaml -n exam-azizbek
+deployment.apps/flaskapp-nvrbckdown created
+
+
+alonso@alonso-vm:~/exam$ kubectl  get deployment
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+flaskapp-nvrbckdown   1/1     1            1           5s
+alonso@alonso-vm:~/exam$ kubectl get pods
+NAME                                   READY   STATUS    RESTARTS   AGE
+flaskapp-nvrbckdown-54c66bb989-x4mt7   1/1     Running   0          37s
+nginx1                                 1/1     Running   0          39m
+nginx2                                 1/1     Running   0          39m
+alonso@alonso-vm:~/exam$ kubectl  port-forward pods/flaskapp-nvrbckdown-54c66bb989-x4mt7 8080:5000
+Forwarding from 127.0.0.1:8080 -> 5000
+Forwarding from [::1]:8080 -> 5000
+Handling connection for 8080
+
+
+
+
+alonso@alonso-vm:~/exam/code/task2$ curl localhost:8080
+{"env":"staging","http_port":"80","string":"Welcome to DevOps Course!"}
+

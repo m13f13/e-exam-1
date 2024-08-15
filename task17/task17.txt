@@ -1,0 +1,115 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-14T15:38:56Z"
+    creationTimestamp: "2024-08-14T15:38:56Z"
+    labels:
+      app: flaskapp-nvrbckdown
+    name: flaskapp-cluster
+    namespace: exam-azizbek
+    resourceVersion: "7025053"
+    uid: 6e18d204-e931-4df9-a981-39823210fccd
+  subsets:
+  - addresses:
+    - ip: 10.233.71.57
+      nodeName: node3
+      targetRef:
+        kind: Pod
+        name: flaskapp-nvrbckdown-54c66bb989-x4mt7
+        namespace: exam-azizbek
+        uid: 5d14efc3-f76c-4ea1-ad0b-a2ed258a5fcb
+    ports:
+    - port: 5000
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-14T15:31:11Z"
+    creationTimestamp: "2024-08-14T15:31:11Z"
+    labels:
+      app: flaskapp-nvrbckdown
+    name: flaskapp-nvrbckdown
+    namespace: exam-azizbek
+    resourceVersion: "7023587"
+    uid: 149f40f3-4ab5-4672-a842-e6e978fa0838
+  subsets:
+  - addresses:
+    - ip: 10.233.71.57
+      nodeName: node3
+      targetRef:
+        kind: Pod
+        name: flaskapp-nvrbckdown-54c66bb989-x4mt7
+        namespace: exam-azizbek
+        uid: 5d14efc3-f76c-4ea1-ad0b-a2ed258a5fcb
+    ports:
+    - port: 5000
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-14T16:00:04Z"
+    creationTimestamp: "2024-08-14T16:00:04Z"
+    labels:
+      app: frontend-app
+    name: frontend-app
+    namespace: exam-azizbek
+    resourceVersion: "7029708"
+    uid: 0f8af103-a45b-46dd-8145-37a55be5856e
+  subsets:
+  - addresses:
+    - ip: 10.233.71.6
+      nodeName: node3
+      targetRef:
+        kind: Pod
+        name: frontend-app-6fb9bb9dc8-tvvtv
+        namespace: exam-azizbek
+        uid: 3cfee775-689e-453c-92b8-06e53abf426a
+    ports:
+    - port: 80
+      protocol: TCP
+- apiVersion: v1
+  kind: Endpoints
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2024-08-14T16:45:20Z"
+    creationTimestamp: "2024-08-14T16:35:28Z"
+    labels:
+      app: sec-deploy
+    name: sec-deploy
+    namespace: exam-azizbek
+    resourceVersion: "7039805"
+    uid: 00e76c23-a9cb-4cc7-8f8b-466531d8b11a
+  subsets:
+  - addresses:
+    - ip: 10.233.102.145
+      nodeName: node1
+      targetRef:
+        kind: Pod
+        name: sec-deploy-778b9dddd7-dxztr
+        namespace: exam-azizbek
+        uid: cbb035d3-da2e-42e3-9a2f-03d73a9e7280
+    - ip: 10.233.75.33
+      nodeName: node2
+      targetRef:
+        kind: Pod
+        name: sec-deploy-778b9dddd7-v95lh
+        namespace: exam-azizbek
+        uid: c86f0838-123d-4da9-80fc-670f2502f02d
+    - ip: 10.233.97.182
+      nodeName: node5
+      targetRef:
+        kind: Pod
+        name: sec-deploy-778b9dddd7-2dhbz
+        namespace: exam-azizbek
+        uid: 1441a00f-aae4-4921-bee1-061c0fae1e15
+    ports:
+    - port: 80
+      protocol: TCP
+kind: List
+metadata:
+  resourceVersion: ""

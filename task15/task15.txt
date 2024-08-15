@@ -1,0 +1,9 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl scale deployment sec-deploy --replicas 3
+deployment.apps/sec-deploy scaled
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl get deployment
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+flaskapp-nvrbckdown   1/1     1            1           83m
+frontend-app          1/1     1            1           47m
+sec-deploy            3/3     3            3           13m
+

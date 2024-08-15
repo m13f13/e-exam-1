@@ -1,0 +1,12 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl apply -f task14.yaml -n exam-azizbek
+deployment.apps/sec-deploy configured
+
+
+
+
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl  get deploy
+NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
+flaskapp-nvrbckdown   1/1     1            1           176m
+frontend-app          1/1     1            1           140m
+sec-deploy            1/1     1            1           106m
+

@@ -1,0 +1,3 @@
+alonso@alonso-vm:~/exam/repo-2-main$ kubectl apply -f deploy_limit.yaml -n exam-azizbek
+deployment.apps/sec-deploy configured
+

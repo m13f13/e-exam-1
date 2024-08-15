@@ -1,0 +1,10 @@
+alonso@alonso-vm:~/exam/repo-2-main/task$ kubectl create -f frontend-app.yaml -n exam-azizbek
+deployment.apps/frontend-app created
+alonso@alonso-vm:~/exam/repo-2-main/task$ kubectl  get pods
+NAME                                   READY   STATUS              RESTARTS   AGE
+flaskapp-nvrbckdown-54c66bb989-x4mt7   1/1     Running             0          29m
+frontend-app-7644c9c6b7-cgrxl          0/1     ContainerCreating   0          3s
+nginx1                                 1/1     Running             0          68m
+nginx2                                 1/1     Running             0          67m
+alonso@alonso-vm:~/exam/repo-2-main/task$ 
+
